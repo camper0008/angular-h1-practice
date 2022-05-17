@@ -8,7 +8,8 @@ input {
 
 button,
 select,
-input {
+input,
+#city {
     all: unset;
     box-sizing: border-box;
     background-color: var(--dark-fg-2);
@@ -45,4 +46,35 @@ input {
 #city {
     opacity: 0.5;
     pointer-events: none;
+
+    &:empty {
+        width: 8ch;
+        &::after {
+            content: "\1B";
+        }
+    }
+}
+
+.postcode-result-list {
+    margin-top: 0;
+
+    h1 {
+        text-align: center;
+    }
+
+    ul {
+        margin: 0 auto;
+        width: max-content;
+        padding: 0;
+
+        li {
+            margin-bottom: 1rem;
+            width: max-content;
+            list-style-type: "> ";
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
 }

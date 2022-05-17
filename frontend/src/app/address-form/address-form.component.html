@@ -1,24 +1,34 @@
 <div class="form-container">
     <div class="form-list">
         <div class="form-item">
-            <label for="region">Region: </label>
-            <select id="region">
-                <option>Midtjylland</option>
-            </select>
-        </div>
-        <div class="form-item">
             <label for="postcode">Postnr: </label>
-            <input id="postcode" list="postcode-list" />
-            <datalist id="postcode-list"></datalist>
+            <input
+                #postcodeInput
+                id="postcode"
+                list="postcode-data-list"
+                (input)="getPostcode(postcodeInput.value)"
+            />
+            <datalist id="postcode-data-list">
+                <option *ngFor="let postcode of postcodes">
+                    {{ postcode.nr }}
+                </option>
+            </datalist>
         </div>
         <div class="form-item">
-            <label for="city">By: </label>
-            <input id="city" type="text" />
-        </div>
-        <div class="form-item">
-            <label for="roadname">Vej: </label>
-            <input id="roadname" list="roadname-list" />
-            <datalist id="postcode-list"></datalist>
+            <label for="city">Bynavn: </label>
+            <p id="city">
+                <span *ngFor="let postcode of currentPostcode">
+                    {{ postcode.navn }}
+                </span>
+            </p>
         </div>
     </div>
+</div>
+<div class="postcode-result-list" *ngIf="currentPostcode.length">
+    <h1>kommuner</h1>
+    <ul *ngFor="let postcode of currentPostcode">
+        <li *ngFor="let municipality of postcode.kommuner">
+            {{ municipality.navn }}
+        </li>
+    </ul>
 </div>
