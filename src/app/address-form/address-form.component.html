@@ -25,7 +25,7 @@
     </div>
 </div>
 <div class="postcode-result-list" *ngIf="currentPostcode.length">
-    <h1>kommuner</h1>
+    <h1>Kommuner</h1>
     <ul *ngFor="let postcode of currentPostcode">
         <li *ngFor="let municipality of postcode.kommuner">
             {{ municipality.navn }}
