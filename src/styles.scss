@@ -1,6 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --brand: #9ba5bb;
+    --dark-fg-0: #2a2d34;
+    --dark-fg-1: #3b3f49;
+    --dark-fg-2: #4a4f5c;
+    --light: #eee;
+}
 body {
-    background-color: #242424;
-    color: #eee;
-    text-align: center;
+    background-color: var(--dark-fg-0);
+    color: var(--light);
+    font-family: "Public Sans", sans-serif;
+    min-height: 100vh;
+    margin: 0;
+}
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--brand);
+}
+
+:focus-visible {
+    outline: 2px solid black;
 }

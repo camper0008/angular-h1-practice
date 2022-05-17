@@ -1,0 +1,48 @@
+button,
+select,
+option,
+label,
+input {
+    font-size: 1.2rem;
+}
+
+button,
+select,
+input {
+    all: unset;
+    box-sizing: border-box;
+    background-color: var(--dark-fg-2);
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    .form-list {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+
+        .form-item {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            width: max-content;
+
+            :not(label) {
+                flex: 1;
+            }
+        }
+    }
+}
+
+#postcode {
+    width: calc(5ch + 1rem);
+    flex: unset;
+}
+
+#city {
+    opacity: 0.5;
+    pointer-events: none;
+}

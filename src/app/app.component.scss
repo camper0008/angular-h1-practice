@@ -1,6 +1,21 @@
-h1 {
-    font-family: sans-serif;
-}
-img {
-    width:500px
+.card-container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    .card {
+        --shadow: rgba(0, 0, 0, 0.25);
+
+        width: max-content;
+        background-color: var(--dark-fg-1);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        box-shadow: 0rem 0.4rem 1rem var(--shadow), 0rem 0rem 1rem var(--shadow);
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+        }
+    }
 }
