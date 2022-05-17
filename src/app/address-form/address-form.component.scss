@@ -70,7 +70,8 @@ input,
         li {
             margin-bottom: 1rem;
             width: max-content;
-            list-style-type: "> ";
+            list-style-type: "@  ";
+            list-style-position: outside;
 
             &:last-child {
                 margin-bottom: 0;
