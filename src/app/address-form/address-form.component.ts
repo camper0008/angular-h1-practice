@@ -26,7 +26,7 @@ export class AddressFormComponent {
     }
 
     getPostcode(postcode: string): void {
-        if (postcode) {
+        if (postcode && postcode.length == 4 && parseInt(postcode)) {
             this.addressFormService
                 .getCurrentPostcode(postcode)
                 .subscribe(
